@@ -5,7 +5,7 @@
 				class="current-swatch"
 				:class="{ 'current-swatch--active': valid }"
 				:style="
-					`--hue: ${hue}deg; --saturation: ${saturation}%; --lightness: ${lightness}%;`
+					`--hue: ${hex}deg; --hue: ${hue}deg; --saturation: ${saturation}%; --lightness: ${lightness}%;`
 				"
 			>
 				<div class="current-swatch__ring">
@@ -21,11 +21,11 @@
 						"
 					/>
 				</div>
-				<div class="testttt">
+				<!-- <div class="testttt">
 					h: {{ hue }}<br />
 					s: {{ saturation }}<br />
 					l: {{ lightness }} <br />
-				</div>
+				</div> -->
 				<div class="current-swatch__range current-swatch__range--hue">
 					<input
 						v-model="hue"
@@ -340,7 +340,8 @@ export default {
 		margin-top: 1em;
 
 		&--hue {
-			background: linear-gradient(
+			background-color: var(--color, #f7f7f7);
+			background-image: linear-gradient(
 				to right,
 				hsl(0, var(--saturation), var(--lightness)),
 				hsl(60, var(--saturation), var(--lightness)),
@@ -352,14 +353,16 @@ export default {
 			);
 		}
 		&--saturation {
-			background: linear-gradient(
+			background-color: var(--color, #f7f7f7);
+			background-image: linear-gradient(
 				to right,
 				hsl(var(--hue), 0%, var(--lightness)),
 				hsl(var(--hue), 100%, var(--lightness))
 			);
 		}
 		&--lightness {
-			background: linear-gradient(
+			background-color: var(--color, #f7f7f7);
+			background-image: linear-gradient(
 				to right,
 				hsl(var(--hue), var(--saturation), 0%),
 				hsl(var(--hue), var(--saturation), 50%),
