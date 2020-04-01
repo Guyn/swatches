@@ -12,15 +12,15 @@ import {
 } from '@guyn/convert/lib/color';
 
 export const state = () => ({
-	valid: false,
+	valid: true,
 	color: {
-		h: 0,
-		s: 100,
-		l: 50,
-		r: 255,
-		g: 255,
-		b: 255,
-		hex: '#ff0000'
+		h: 80,
+		s: 20,
+		l: 80,
+		r: 207,
+		g: 214,
+		b: 194,
+		hex: '#cfd6c1'
 	}
 });
 
