@@ -1,0 +1,74 @@
+@import '~tools';
+
+.add-swatch {
+	position: relative;
+	padding: 1em;
+	&__field {
+		position: relative;
+		display: flex;
+		label,
+		select,
+		input {
+			border: none;
+			color: inherit;
+			font-size: 1.5em;
+			line-height: 1;
+			padding: 1em 0;
+		}
+		input {
+			display: inline-block;
+			flex-shrink: 1;
+			border: 1px solid rgba(0, 0, 0, 0.1);
+			background-color: transparent;
+			padding: 0.5em;
+			&:focus {
+				outline: none;
+			}
+			&.third {
+				width: 33%;
+				text-align: center;
+			}
+			& + input {
+				border-left-width: 0px;
+			}
+		}
+		label {
+			opacity: 0.5;
+		}
+
+		&.invalid {
+			box-shadow: 0 0 0 2px var(--color-red) inset;
+		}
+		&.valid {
+			box-shadow: 0 0 0 2px transparent inset;
+			// border-color: rgba(0, 0, 0, 0.25);
+		}
+		select {
+			background-color: transparent;
+			padding: 1em;
+			font-size: 1.5em;
+		}
+		button {
+			flex-shrink: 0;
+		}
+	}
+	&__color {
+		position: absolute;
+		top: 50%;
+		right: 2em;
+		z-index: -1;
+		display: block;
+		width: 4em;
+		height: 4em;
+		border-radius: inherit;
+		transform: translatY(-50%) scale(0.5);
+		transform-origin: 0 0;
+		opacity: 0;
+		transition: transform $base-transition;
+
+		&--active {
+			transform: translateY(-50%) scale(1);
+			opacity: 1;
+		}
+	}
+}
