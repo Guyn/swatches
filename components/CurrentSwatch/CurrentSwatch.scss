@@ -93,15 +93,16 @@
 			background-color: var(--color, #f7f7f7);
 			background-image: linear-gradient(
 				to right,
-				hsl(var(--hue), 0%, var(--lightness)),
+				hsl(var(--hue), 0.001%, var(--lightness)),
 				hsl(var(--hue), 100%, var(--lightness))
 			);
 		}
 		&--lightness {
 			background-color: var(--color, #f7f7f7);
+
 			background-image: linear-gradient(
 				to right,
-				hsl(var(--hue), var(--saturation), 0%),
+				hsl(var(--hue), var(--saturation), 0.001%),
 				hsl(var(--hue), var(--saturation), 50%),
 				hsl(var(--hue), var(--saturation), 100%)
 			);
