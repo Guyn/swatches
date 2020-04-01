@@ -1,5 +1,9 @@
 <template>
-	<main class="page page--home">
+	<main
+		class="page page--home"
+		:style="`--background: ${hex}`"
+		:class="[lightness > 50 ? 'light' : 'dark']"
+	>
 		<div class="create-swatches">
 			<CurrentSwatch />
 			<AddSwatch />
@@ -27,6 +31,14 @@ export default {
 		AddSwatch,
 		DownloadPalette,
 		CurrentSwatch
+	},
+	computed: {
+		hex() {
+			return this.$store.getters['current/getHex'];
+		},
+		lightness() {
+			return this.$store.getters['current/getLightness'];
+		}
 	}
 };
 </script>
@@ -36,7 +48,9 @@ export default {
 
 .button {
 	display: inline-block;
-	border: 2px solid currentColor;
+	border: 2px solid var(--text);
+	background-color: var(--body);
+	color: var(--text);
 	font-weight: bold;
 	font-size: 1em;
 	padding: 0.5em;
@@ -48,18 +62,40 @@ export default {
 		justify-content: center;
 		align-items: center;
 		height: 100vh;
+		background-color: var(--background);
+		transition: background 1s ease-in-out;
+		&.light {
+			--body: #202020;
+			--text: white;
+		}
+		&.dark {
+			--body: white;
+			--text: #202020;
+		}
 	}
 }
 .create-swatches {
 	display: flex;
 	flex-direction: column;
 	width: 480px;
-	box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.1);
+	box-shadow: 0 0 100px 0 rgba(0, 0, 0, 0.21);
 	margin: auto;
 	border-radius: $base-border-radius;
+	background-color: var(--body);
+	color: var(--text);
 	> div {
 		& + div {
-			border-top: 1px solid rgba(0, 0, 0, 0.1);
+			position: relative;
+			&::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 1px;
+				background-color: var(--text);
+				opacity: 0.25;
+			}
 		}
 	}
 }

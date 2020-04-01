@@ -1,19 +1,19 @@
 <template>
 	<div class="layout layout-default" :class="colorMode">
-		<LayoutHeader />
+		<Header />
 		<nuxt />
-		<LayoutFooter />
+		<Footer />
 	</div>
 </template>
 
 <script>
-import LayoutHeader from '~/components/layout/header.vue';
-import LayoutFooter from '~/components/layout/footer.vue';
+import Header from '~/components/layout/Header';
+import Footer from '~/components/layout/Footer';
 
 export default {
 	components: {
-		LayoutHeader,
-		LayoutFooter
+		Header,
+		Footer
 	},
 	computed: {
 		colorMode() {

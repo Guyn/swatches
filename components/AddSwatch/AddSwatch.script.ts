@@ -97,9 +97,6 @@ export default class AddSwatch extends Vue {
 	// Methods:
 
 	addColor(): void {
-		if (this.valid) {
-			this.$store.dispatch('palette/addColor', this.color);
-			this.$store.dispatch('current/reset');
-		}
+		if (this.valid) this.$store.dispatch('palette/addColor', this.color);
 	}
 }

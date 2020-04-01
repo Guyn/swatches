@@ -1,5 +1,10 @@
 import { Vue, Component } from 'vue-property-decorator';
 
+interface hslType {
+	h: Number;
+	s: Number;
+	l: Number;
+}
 @Component<CurrentSwatch>({
 	name: 'CurrentSwatch'
 })
@@ -54,5 +59,13 @@ export default class CurrentSwatch extends Vue {
 
 	public set lightness(value: number) {
 		this.$store.dispatch('current/setLightness', value);
+	}
+
+	setColor(hue: number): void {
+		if (hue > 360) {
+			this.$store.dispatch('current/setHue', hue - 360);
+		} else {
+			this.$store.dispatch('current/setHue', hue);
+		}
 	}
 }

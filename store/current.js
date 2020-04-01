@@ -30,8 +30,7 @@ export const mutations = {
 	},
 	SET_VALID(state, bool) {
 		state.valid = bool;
-	},
-	RESET() {}
+	}
 };
 
 export const getters = {
@@ -152,8 +151,5 @@ export const actions = {
 				hex: value
 			});
 		commit('SET_VALID', isHex(value));
-	},
-	reset({ commit }) {
-		commit('RESET');
 	}
 };

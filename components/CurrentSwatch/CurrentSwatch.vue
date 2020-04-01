@@ -7,9 +7,79 @@
 		"
 	>
 		<div class="current-swatch__ring">
-			<span class="current-swatch__hue" :style="`--degree: ${hue}deg`">
+			<span class="current-swatch__hue" :style="`--degree: ${hue}deg;`">
 				<span></span>
 			</span>
+			<span
+				class="current-swatch__suggestion"
+				:style="
+					`--degree: ${hue + 45}deg; --suggest-color: hsl(${hue +
+						45}deg,${saturation}%,${lightness}%)`
+				"
+				@click="setColor(hue + 45)"
+			>
+				<span></span
+			></span>
+			<span
+				class="current-swatch__suggestion"
+				:style="
+					`--degree: ${hue + 90}deg; --suggest-color: hsl(${hue +
+						90}deg,${saturation}%,${lightness}%)`
+				"
+				@click="setColor(hue + 90)"
+			>
+				<span></span
+			></span>
+			<span
+				class="current-swatch__suggestion"
+				:style="
+					`--degree: ${hue + 135}deg; --suggest-color: hsl(${hue +
+						135}deg,${saturation}%,${lightness}%)`
+				"
+				@click="setColor(hue + 135)"
+			>
+				<span></span
+			></span>
+			<span
+				class="current-swatch__suggestion"
+				:style="
+					`--degree: ${hue + 180}deg; --suggest-color: hsl(${hue +
+						180}deg,${saturation}%,${lightness}%)`
+				"
+				@click="setColor(hue + 180)"
+			>
+				<span></span
+			></span>
+			<span
+				class="current-swatch__suggestion"
+				:style="
+					`--degree: ${hue + 225}deg; --suggest-color: hsl(${hue +
+						225}deg,${saturation}%,${lightness}%)`
+				"
+				@click="setColor(hue + 225)"
+			>
+				<span></span
+			></span>
+			<span
+				class="current-swatch__suggestion"
+				:style="
+					`--degree: ${hue + 270}deg; --suggest-color: hsl(${hue +
+						270}deg,${saturation}%,${lightness}%)`
+				"
+				@click="setColor(hue + 270)"
+			>
+				<span></span
+			></span>
+			<span
+				class="current-swatch__suggestion"
+				:style="
+					`--degree: ${hue + 315}deg; --suggest-color: hsl(${hue +
+						315}deg,${saturation}%,${lightness}%)`
+				"
+				@click="setColor(hue + 315)"
+			>
+				<span></span
+			></span>
 
 			<div
 				v-if="valid"

@@ -1,10 +1,16 @@
 <template>
-	<div class="palette">
+	<div v-if="swatches.length > 0" class="palette">
 		<div class="palette__info">
 			<input v-model="title" type="text" />
 		</div>
 		<ul class="palette__list">
-			<li v-for="(swatch, idx) in swatches" :key="idx" class="palette__item">
+			<li
+				v-for="(swatch, idx) in swatches"
+				:key="idx"
+				class="palette__item"
+				:class="{ 'palette__item--glow': swatch.state == 'glow' }"
+				@click="setColor(swatch.hex)"
+			>
 				<span
 					class="palette__dot"
 					:style="
@@ -12,6 +18,7 @@
 					"
 					@click="color = swatch"
 				/>
+				<span class="palette__remove" @click="removeColor(swatch.hex)"> </span>
 				<span class="palette__info">
 					hue: {{ swatch.h }}<br />
 					sat: {{ swatch.s }}<br />

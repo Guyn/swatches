@@ -14,4 +14,12 @@ export default class Palette extends Vue {
 			this.$store.dispatch('palette/setTitle', v);
 		}
 	};
+
+	setColor(hex: string): void {
+		this.$store.dispatch('current/setHex', hex);
+	}
+
+	removeColor(hex: string): void {
+		this.$store.dispatch('palette/removeColorByHex', hex);
+	}
 }

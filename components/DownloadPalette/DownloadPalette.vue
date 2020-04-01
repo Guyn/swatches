@@ -1,5 +1,5 @@
 <template>
-	<div class="download-palette">
+	<div v-if="hasSwatches" class="download-palette">
 		<div v-if="status === 'idle'" class="download-palette__idle">
 			<button class="button" :disabled="!valid" @click="download">
 				Download swatches
