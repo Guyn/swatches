@@ -1,16 +1,19 @@
 <template>
-	<main
-		class="page page--home"
-		:style="`--background: ${hex}`"
-		:class="[lightness > 50 ? 'light' : 'dark']"
-	>
-		<div class="create-swatches">
-			<CurrentSwatch />
-			<AddSwatch />
-			<Palette />
-			<DownloadPalette />
-		</div>
-	</main>
+	<div>
+		<main
+			class="page page--home"
+			:style="`--background: ${hex}`"
+			:class="[lightness > 50 ? 'light' : 'dark']"
+		>
+			<div class="create-swatches">
+				<CurrentSwatch />
+				<AddSwatch />
+				<Palette />
+				<DownloadPalette />
+			</div>
+			<PaletteList />
+		</main>
+	</div>
 </template>
 
 <script>
@@ -25,12 +28,14 @@ import AddSwatch from '@/components/AddSwatch';
 import CurrentSwatch from '@/components/CurrentSwatch';
 import DownloadPalette from '@/components/DownloadPalette';
 import Palette from '@/components/Palette';
+import PaletteList from '@/components/PaletteList';
 export default {
 	components: {
 		Palette,
 		AddSwatch,
 		DownloadPalette,
-		CurrentSwatch
+		CurrentSwatch,
+		PaletteList
 	},
 	computed: {
 		hex() {
@@ -59,6 +64,7 @@ export default {
 .page {
 	&--home {
 		display: flex;
+		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		height: 100vh;
@@ -78,6 +84,7 @@ export default {
 	display: flex;
 	flex-direction: column;
 	width: 480px;
+	max-width: 100%;
 	box-shadow: 0 0 100px 0 rgba(0, 0, 0, 0.21);
 	margin: auto;
 	border-radius: $base-border-radius;

@@ -1,0 +1,48 @@
+@import '~tools';
+
+.palette-list {
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 10;
+	height: 100vh;
+	background-color: var(--body);
+	color: var(--text);
+	@media #{$small-only} {
+		position: relative;
+		width: 100%;
+	}
+	&__list {
+		padding: 1em;
+	}
+	&__item {
+		display: block;
+		padding: 1em;
+		& + .palette-list__item {
+			border-top: 1px solid white;
+		}
+	}
+	&__title {
+		background-color: rgba(#7f7f7f, 0.25);
+		font-size: 1em;
+		padding: 1em;
+	}
+}
+
+.palette-item {
+	&__color {
+	}
+	&__colors {
+		display: flex;
+		flex-wrap: wrap;
+		max-width: 15em;
+		@media #{$small-only} {
+			max-width: 100%;
+		}
+	}
+	&__dot {
+		display: block;
+		width: 1.5em;
+		height: 1.5em;
+	}
+}

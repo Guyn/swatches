@@ -64,6 +64,7 @@
 			border: none;
 			background-color: var(--suggest-color, blue);
 			transform: translateX(-50%) translateY(-25%) scale(0.5);
+			transition: transform $base-transition;
 		}
 		&:hover span {
 			transform: translateX(-50%) translateY(-25%) scale(1);
@@ -99,7 +100,6 @@
 		}
 		&--lightness {
 			background-color: var(--color, #f7f7f7);
-
 			background-image: linear-gradient(
 				to right,
 				hsl(var(--hue), var(--saturation), 0.001%),

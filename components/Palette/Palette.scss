@@ -32,7 +32,7 @@
 			opacity: 1;
 		}
 	}
-	&__info {
+	&__swatch-info {
 		position: absolute;
 		top: 100%;
 		left: 0;
@@ -54,6 +54,22 @@
 		opacity: 0;
 		&::before {
 			content: '✗';
+		}
+	}
+	&__info {
+		input {
+			display: block;
+			width: 100%;
+			border: none;
+			background-color: transparent;
+			color: var(--text);
+			font-size: 1.5em;
+			padding: 0;
+			padding: 0.5em 0;
+			&:focus {
+				border-bottom: 2px solid var(--text);
+				outline: none;
+			}
 		}
 	}
 }

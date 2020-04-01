@@ -10,5 +10,5 @@ import Trigger from '@/components/navigation/Trigger';
 	}
 })
 export default class Header extends Vue {
-	projectName: string = 'Hi!';
+	projectName: string = 'Swatches';
 }

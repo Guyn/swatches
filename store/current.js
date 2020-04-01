@@ -1,7 +1,5 @@
 import {
 	isHex,
-	// isHsl,
-	// isRgb,
 	hexToRgb,
 	hexToHsl,
 	rgbToHsl,
